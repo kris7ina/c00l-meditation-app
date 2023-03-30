@@ -324,7 +324,7 @@ export default function App() {
       <footer style={fadeTransition}>
         <p className={styles.copyright}>Designed & developed by Kristina Rulina © 2023</p>
           <div>
-            <a href='https://github.com/kris7ina' target='_blank'>
+            <a href='https://github.com/kris7ina/c00l-meditation-app' target='_blank'>
               <img className={styles.icon} src='/icons/iconmonstr-github-1.svg' />
             </a>
             <a href='https://www.behance.net/frenchdogblues' target='_blank'>
