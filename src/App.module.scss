@@ -87,7 +87,6 @@ $ease-out: all 0.3s ease-out;
   width: 45px;
   transform-style: preserve-3d;
   transform: scale(0);
-  opacity: 0.9;
   transition: $ease-out;
 }
 
@@ -188,6 +187,10 @@ footer {
 @media only screen and (max-width: 415px) {
   .main {
     margin-bottom: 70px;
+  }
+  .timerBox {
+    margin-top: -5px;
+    margin-bottom: -10px;
   }
   footer {
     flex-direction: column;
