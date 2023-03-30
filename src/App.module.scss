@@ -161,7 +161,7 @@ $ease-out: all 0.3s ease-out;
   }
 }
 
-.footer {
+footer {
   @include display-flex(space-between);
   z-index: 20;
   position: absolute;
@@ -189,7 +189,7 @@ $ease-out: all 0.3s ease-out;
   .main {
     margin-bottom: 70px;
   }
-  .footer {
+  footer {
     flex-direction: column;
     justify-content: center;
     text-align: center;

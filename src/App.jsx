@@ -321,7 +321,7 @@ export default function App() {
         </div>
 
       </main>
-      <footer className={styles.footer} style={fadeTransition}>
+      <footer style={fadeTransition}>
         <p className={styles.copyright}>Designed & developed by Kristina Rulina © 2023</p>
           <div>
             <a href='https://github.com/kris7ina' target='_blank'>
