@@ -1,0 +1,200 @@
+@mixin display-flex($value) {
+  display: flex;
+  align-items: center;
+  justify-content: $value;
+}
+$ease-out: all 0.3s ease-out;
+
+.playIcon, .pauseIcon, .volumeIcon, .resetBtn, .slider {
+  cursor: pointer;
+}
+
+.app {
+  @include display-flex(space-evenly);
+  height: 100vh;
+}
+
+.overlay {
+  z-index: 0;
+  background-color: #0f0f0f99;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.bg {
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: 0.5s ease-in opacity;
+  img {
+    width: 100%;
+    background-position: center bottom;
+  }
+}
+
+.bg.activeBg {
+  transition: 0.5s ease-in opacity;
+  opacity: 1;
+}
+
+.main {
+  margin-bottom: 10px;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+}
+
+.options, .middle {
+  @include display-flex(space-evenly);
+  height: 100%;
+  flex-direction: column;
+}
+
+.options {
+  position: relative;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.middle { justify-content: center; }
+
+.audioSeek {
+  position: relative;
+  min-width: 120px;
+  margin: 10px 50px;
+}
+
+.playPauseBtn.playMode,
+.playPauseBtn.pauseMode {
+  @include display-flex(center);
+  width: 45px;
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: $ease-out;
+  transform-origin: center;
+}
+
+.playIcon, .pauseIcon {
+  width: 45px;
+  transform-style: preserve-3d;
+  transform: scale(0);
+  opacity: 0.9;
+  transition: $ease-out;
+}
+
+.pauseIcon { transform-origin: left; }
+.playIcon { transform-origin: right; }
+
+.playMode {
+  .playIcon {
+    opacity: 0;
+    transform: translateX(20px) rotateY(90deg) scale(1.1);
+  }
+  .pauseIcon {
+    transform: translateX(20px) rotateY(0deg) scale(1.1);
+  }
+}
+
+.pauseMode {
+  .playIcon {
+    transform: translateX(-20px) rotateY(0deg) scale(1.1);
+  }
+  .pauseIcon {
+    opacity: 0;
+    transform: translateX(-20px) rotateY(-90deg) scale(1.1);
+  }
+}
+
+.timerBox {
+  @include display-flex(center);
+  position: relative;
+  margin-top: 10px;
+
+  .timer {
+    padding-top: 20px;
+    display: block;
+    text-align: left;
+    font-size: 33px;
+    font-family: 'Red Hat Mono';
+    font-weight: 400;
+  }
+  
+  .resetBtn {
+    padding-top: 20px;
+    width: 25px;
+    transition: $ease-out;
+    position: absolute;
+    right: -43px;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+.volume {
+  @include display-flex(center);
+  bottom: 0%;
+
+  .volumeIcon {
+    transition: $ease-out;
+    width: 25px;
+    padding-right: 10px;
+    z-index: 50;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+.footer {
+  @include display-flex(space-between);
+  z-index: 20;
+  position: absolute;
+  bottom: 20px;
+  margin-top: 20px;
+  width: 90vw;
+
+  .copyright {
+    font-size: 11px;
+    opacity: 0.8;
+  }
+  
+  .icon {
+    width: 22px;
+    margin-left: 15px;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .main {
+    margin-bottom: 70px;
+  }
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .icon {
+    margin-top: 15px;
+  }
+}

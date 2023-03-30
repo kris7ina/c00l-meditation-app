@@ -1,0 +1,42 @@
+.drop, ul, li { border-radius: 5px; }
+
+.drop {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.7em 18px;
+  position: relative;
+  text-transform: capitalize;
+  width: 100px;
+  text-align: center;
+  background-color: #ffffff42;
+  letter-spacing: 0.5px;
+  &:hover ul {
+    transform: scale(1);
+  }
+
+  ul {
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    top: 3em;
+    transition: all 0.3s ease;
+    transform: scale(0);
+    transform-origin: center top;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    
+    li {
+      width: 100%;
+      padding: 0.7em 18px;
+      display: inline-block;
+      white-space: pre;
+      box-sizing: border-box;
+      &:hover, .activeOption {
+        background: #d8c7c71a;
+      }
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+}

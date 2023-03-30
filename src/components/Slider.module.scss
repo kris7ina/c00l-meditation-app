@@ -1,0 +1,49 @@
+@mixin webkit-moz {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+$transparent-white: rgba(255, 255, 255, 0.336);
+
+.range {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  .sliderBg {
+    position: absolute;
+    height: 3px;
+    border-radius: 5px;
+    background-color: white;
+    z-index: 2221;
+  }
+
+  input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    background: $transparent-white;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    z-index: 2222;
+    cursor: pointer;
+    &::-webkit-slider-thumb {
+      @include webkit-moz();
+    }
+    &::-moz-range-thumb {
+      @include webkit-moz();
+    }
+    &::-moz-range-progress {
+      background: $transparent-white;
+    }
+  }
+}

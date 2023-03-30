@@ -1,0 +1,57 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.main { display: grid; }
+
+.btnWrap {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  background-color: transparent;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.increase,
+.decrease {
+  width: 10px;
+  transform: rotateZ(90deg);
+}
+
+.increase { transform: rotateZ(-90deg); }
+
+.display {
+  border-radius: 5px;
+  width: 40px;
+  height: 33px;
+  text-align: center;
+  outline: none;
+  border: none;
+  background-color: #ffffff42;
+  pointer-events: none;
+  font-size: 17px;
+  font-family: 'Red Hat Mono';
+  font-weight: 400;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.minutes {
+  padding-left: 10px;
+  letter-spacing: 0.5px;
+}
