@@ -1,5 +1,11 @@
 # c00l-meditation-app
 
+[test live demo here](https://c00l-meditation.netlify.app/)
+
+## preview
+
+<img src='https://user-images.githubusercontent.com/124094022/228808364-5c9f55be-f4e2-4d51-9e26-5f8bf62602a5.jpg' width='100%'>
+
 ## info
 
 ### tech
