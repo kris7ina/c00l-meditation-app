@@ -11,7 +11,7 @@ $ease-out: all 0.3s ease-out;
 
 .app {
   @include display-flex(space-evenly);
-  height: 100vh;
+  height: var(--app-height);
 }
 
 .overlay {
