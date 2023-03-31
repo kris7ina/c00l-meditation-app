@@ -20,5 +20,10 @@ body {
   font-family: 'Comfortaa', 'Montserrat', 'Red Hat Mono', Helvetica, sans-serif;
   font-size: 16px;
   background-color: rgb(0, 58, 49);
-  height: var(--app-height);
+}
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    height: -webkit-fill-available;
+  }
 }
