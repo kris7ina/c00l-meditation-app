@@ -14,6 +14,12 @@ $ease-out: all 0.3s ease-out;
   height: var(--app-height);
 }
 
+@supports (-webkit-touch-callout: none) {
+  body {
+    height: -webkit-fill-available;
+  }
+}
+
 .overlay {
   z-index: 0;
   background-color: #0f0f0f99;
